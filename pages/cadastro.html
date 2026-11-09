@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro — Biotech Minas</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+<div id="nav-mount"></div>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="page-hero-breadcrumb">
+      <a href="../index.html">Home</a><span>/</span><span>Cadastro</span>
+    </div>
+    <h1>Crie sua <span>conta</span></h1>
+    <p>Cadastre-se para acessar conteúdos exclusivos, histórico de pedidos e suporte técnico prioritário.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start;" class="responsive-grid">
+
+      <!-- Benefits -->
+      <div data-reveal>
+        <div class="section-label">Área do Cliente</div>
+        <h2 class="section-title" style="font-size:1.8rem;">Benefícios do <span>cadastro</span></h2>
+        <div class="divider"></div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;margin-top:28px;">
+          <div class="check-item">
+            <div class="check-icon" style="background:var(--green-100);color:var(--green-700);">✓</div>
+            <div>
+              <strong style="display:block;font-size:.92rem;margin-bottom:3px;">Acesso a conteúdos exclusivos</strong>
+              <p style="font-size:.84rem;color:var(--gray-600);">Guias técnicos, vídeos e manuais de aplicação disponíveis somente para clientes cadastrados.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon" style="background:var(--green-100);color:var(--green-700);">✓</div>
+            <div>
+              <strong style="display:block;font-size:.92rem;margin-bottom:3px;">Histórico de pedidos</strong>
+              <p style="font-size:.84rem;color:var(--gray-600);">Acompanhe todos os seus pedidos, notas fiscais e documentações em um só lugar.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon" style="background:var(--green-100);color:var(--green-700);">✓</div>
+            <div>
+              <strong style="display:block;font-size:.92rem;margin-bottom:3px;">Suporte técnico prioritário</strong>
+              <p style="font-size:.84rem;color:var(--gray-600);">Clientes cadastrados têm atendimento preferencial com nossa equipe de agrônomos.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon" style="background:var(--green-100);color:var(--green-700);">✓</div>
+            <div>
+              <strong style="display:block;font-size:.92rem;margin-bottom:3px;">Inscrição em cursos</strong>
+              <p style="font-size:.84rem;color:var(--gray-600);">Inscreva-se nos nossos cursos e treinamentos diretamente pela sua conta.</p>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-icon" style="background:var(--green-100);color:var(--green-700);">✓</div>
+            <div>
+              <strong style="display:block;font-size:.92rem;margin-bottom:3px;">Ofertas exclusivas</strong>
+              <p style="font-size:.84rem;color:var(--gray-600);">Promoções e condições especiais disponíveis apenas para clientes da nossa base.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:36px;padding:24px;background:var(--green-50);border:1px solid var(--green-100);border-radius:var(--radius-md);">
+          <p style="font-size:.88rem;color:var(--gray-600);">
+            Já possui conta? <a href="#" style="color:var(--green-700);font-weight:600;">Faça login aqui →</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div data-reveal data-delay="2">
+        <div class="form-section">
+          <h3 style="font-size:1.3rem;margin-bottom:28px;">Dados de cadastro</h3>
+
+          <form id="register-form" novalidate>
+
+            <!-- Tipo de pessoa -->
+            <div class="form-group">
+              <label>Tipo de cadastro <span>*</span></label>
+              <div style="display:flex;gap:12px;">
+                <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:400;font-size:.9rem;">
+                  <input type="radio" name="tipo" value="pf" checked style="accent-color:var(--green-600);" /> Pessoa Física
+                </label>
+                <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:400;font-size:.9rem;">
+                  <input type="radio" name="tipo" value="pj" style="accent-color:var(--green-600);" /> Pessoa Jurídica
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nome completo <span>*</span></label>
+                <input type="text" class="form-control" placeholder="Seu nome" required />
+              </div>
+              <div class="form-group">
+                <label>CPF / CNPJ <span>*</span></label>
+                <input type="text" class="form-control" placeholder="000.000.000-00" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>E-mail <span>*</span></label>
+                <input type="email" class="form-control" placeholder="seu@email.com" required />
+              </div>
+              <div class="form-group">
+                <label>Telefone / WhatsApp <span>*</span></label>
+                <input type="tel" class="form-control" placeholder="(31) 99999-9999" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Cidade <span>*</span></label>
+                <input type="text" class="form-control" placeholder="Sua cidade" required />
+              </div>
+              <div class="form-group">
+                <label>Estado <span>*</span></label>
+                <select class="form-control">
+                  <option value="">Selecione...</option>
+                  <option value="MG" selected>Minas Gerais</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="BA">Bahia</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Tipo de produtor / atividade <span>*</span></label>
+              <select class="form-control" required>
+                <option value="">Selecione sua atividade...</option>
+                <option>Produtor rural — pequeno porte</option>
+                <option>Produtor rural — médio/grande porte</option>
+                <option>Engenheiro Agrônomo / Consultor</option>
+                <option>Técnico Agrícola</option>
+                <option>Revenda / Distribuidor</option>
+                <option>Pesquisador / Estudante</option>
+                <option>Outro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Principais culturas de interesse</label>
+              <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;">
+                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:400;font-size:.84rem;">
+                  <input type="checkbox" style="accent-color:var(--green-600);" /> Soja
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:400;font-size:.84rem;">
+                  <input type="checkbox" style="accent-color:var(--green-600);" /> Café
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:400;font-size:.84rem;">
+                  <input type="checkbox" style="accent-color:var(--green-600);" /> Milho
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:400;font-size:.84rem;">
+                  <input type="checkbox" style="accent-color:var(--green-600);" /> Hortifrúti
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:400;font-size:.84rem;">
+                  <input type="checkbox" style="accent-color:var(--green-600);" /> Cana
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-weight:400;font-size:.84rem;">
+                  <input type="checkbox" style="accent-color:var(--green-600);" /> Outras
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Senha <span>*</span></label>
+                <input type="password" class="form-control" placeholder="Mínimo 8 caracteres" required />
+              </div>
+              <div class="form-group">
+                <label>Confirmar senha <span>*</span></label>
+                <input type="password" class="form-control" placeholder="Repita a senha" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-weight:400;">
+                <input type="checkbox" required style="accent-color:var(--green-600);margin-top:3px;" />
+                <span style="font-size:.84rem;color:var(--gray-600);">
+                  Concordo com os <a href="#" style="color:var(--green-700);font-weight:600;">Termos de Uso</a> e
+                  <a href="#" style="color:var(--green-700);font-weight:600;">Política de Privacidade</a> da Biotech Minas.
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;margin-top:8px;">
+              Criar minha conta →
+            </button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="../js/icons.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.getElementById('register-form')?.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Cadastro enviado! Em breve você receberá um e-mail de confirmação.');
+  });
+</script>
+</body>
+</html>

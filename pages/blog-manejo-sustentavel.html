@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manejo Sustentável na Agricultura: O Poder dos Microrganismos — Biotech Minas</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/home.css" />
+  <style>
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 56px;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .article-layout { grid-template-columns: 1fr; }
+    }
+
+    .article-header { margin-bottom: 36px; }
+    .article-header .badge { margin-bottom: 16px; }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--dark-900);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+      margin-bottom: 32px;
+    }
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .82rem;
+      color: var(--gray-500);
+    }
+    .article-meta-item strong { color: var(--dark-700); font-weight: 600; }
+
+    .article-hero-img {
+      width: 100%;
+      aspect-ratio: 16/7;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #0d3520 0%, #1a6b38 50%, #72c254 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+      overflow: hidden;
+      position: relative;
+    }
+    .article-hero-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(114,194,84,.25) 0%, transparent 65%);
+    }
+
+    .article-body { font-size: 1rem; line-height: 1.8; color: var(--dark-700); }
+    .article-body p { margin-bottom: 20px; }
+    .article-body h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--dark-900);
+      margin: 40px 0 16px;
+      padding-left: 16px;
+      border-left: 4px solid var(--green-500);
+    }
+    .article-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green-800);
+      margin: 28px 0 10px;
+    }
+    .article-body strong { color: var(--dark-900); }
+
+    .article-callout {
+      background: linear-gradient(135deg, var(--green-50), #f0faf0);
+      border: 1px solid var(--green-200);
+      border-left: 4px solid var(--green-500);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .article-callout p { margin: 0; font-style: italic; color: var(--green-800); }
+
+    .benefit-list { list-style: none; padding: 0; margin: 20px 0; }
+    .benefit-list li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px;
+      margin-bottom: 12px;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    }
+    .benefit-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green-700);
+      color: #fff;
+      font-size: .85rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .benefit-list li h4 { font-size: .95rem; font-weight: 700; color: var(--dark-900); margin-bottom: 4px; }
+    .benefit-list li p { font-size: .88rem; color: var(--gray-500); margin: 0; }
+
+    .article-cta-box {
+      background: linear-gradient(135deg, var(--green-800), var(--green-700));
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      color: #fff;
+      margin-top: 48px;
+    }
+    .article-cta-box h3 { font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
+    .article-cta-box p { color: rgba(255,255,255,.75); margin-bottom: 20px; font-size: .92rem; }
+    .article-cta-contacts { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .article-cta-contact {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .84rem;
+      color: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.1);
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+
+    /* Sidebar */
+    .article-sidebar-section {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .article-sidebar-section h4 {
+      font-size: .83rem;
+      font-weight: 700;
+      color: var(--dark-900);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--green-100);
+    }
+    .toc-list { list-style: none; padding: 0; }
+    .toc-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-50);
+      font-size: .85rem;
+    }
+    .toc-list li:last-child { border-bottom: none; }
+    .toc-list a { color: var(--green-700); font-weight: 500; }
+    .toc-list a:hover { color: var(--green-500); }
+
+    .related-post {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .related-post:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-post-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--green-100);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .related-post h5 { font-size: .82rem; line-height: 1.4; margin-bottom: 3px; }
+    .related-post a { color: var(--green-700); font-size: .72rem; font-weight: 600; }
+
+    .share-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--gray-200);
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #fff;
+      color: var(--dark-700);
+      transition: all var(--transition);
+    }
+    .share-btn:hover { border-color: var(--green-400); color: var(--green-700); }
+  </style>
+</head>
+<body>
+<div id="nav-mount"></div>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="page-hero-breadcrumb">
+      <a href="../index.html">Home</a><span>/</span>
+      <a href="blog.html">Blog</a><span>/</span>
+      <span>Manejo Sustentável</span>
+    </div>
+    <h1>Manejo Sustentável na <span>Agricultura</span></h1>
+    <p>O poder dos microrganismos eficazes na transformação do solo e da produtividade.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- Article main -->
+      <article>
+
+        <div class="article-header" data-reveal>
+          <span class="badge badge-green">Sustentabilidade</span>
+          <h1>Manejo Sustentável na Agricultura: O Poder dos Microrganismos</h1>
+
+          <div class="article-meta">
+            <div class="article-meta-item">
+              <i data-lucide="user"></i>
+              <strong>Biotech Minas</strong>
+            </div>
+            <div class="article-meta-item">
+              <i data-lucide="calendar"></i>
+              <time>Maio 2025</time>
+            </div>
+            <div class="article-meta-item">
+              <i data-lucide="clock"></i>
+              6 min leitura
+            </div>
+            <div class="article-meta-item">
+              <i data-lucide="tag"></i>
+              EM•1®, Microrganismos, Solo Saudável
+            </div>
+          </div>
+        </div>
+
+        <div class="article-hero-img" data-reveal>
+          <div data-icon="field" style="width:200px;height:200px;opacity:.4;"></div>
+        </div>
+
+        <div class="article-body" data-reveal>
+
+          <h2 id="manejo">O que é o Manejo Sustentável?</h2>
+          <p>
+            O manejo sustentável na agricultura é uma abordagem que busca equilibrar produtividade e preservação
+            ambiental. Em vez de depender exclusivamente de insumos químicos sintéticos, esse modelo integra
+            práticas que fortalecem os processos naturais do solo, reduzem a contaminação e garantem saúde
+            a longo prazo para a terra e para quem produz nela.
+          </p>
+          <p>
+            No centro dessa filosofia está a compreensão de que o solo é um ecossistema vivo. Ele abriga bilhões
+            de microrganismos — bactérias, fungos, protozoários e outros organismos — que trabalham
+            silenciosamente para transformar matéria orgânica, disponibilizar nutrientes e proteger as raízes das
+            plantas. Quando esse equilíbrio é rompido pelo uso excessivo de agroquímicos, a produtividade cai
+            a médio prazo e os custos operacionais sobem.
+          </p>
+
+          <div class="article-callout">
+            <p>"A agricultura sustentável não é uma limitação à produção — é a estratégia mais inteligente para
+            garantir produtividade crescente e custos decrescentes ao longo do tempo."</p>
+          </div>
+
+          <h2 id="microorganismos">Microrganismos: Pequenos mas Transformadores</h2>
+          <p>
+            Durante décadas, o foco da produção agrícola esteve nas plantas — nutrição foliar, defensivos,
+            irrigação. Mas a ciência moderna reforça o que produtores orgânicos já sabiam: a batalha pela
+            produtividade começa no solo, e quem a vence são os microrganismos.
+          </p>
+          <p>
+            Microrganismos eficazes são grupos de micro-organismos benéficos que, quando introduzidos no solo
+            ou aplicados nas plantas, criam condições favoráveis ao desenvolvimento vegetal. Eles atuam na
+            decomposição de matéria orgânica, na fixação de nitrogênio atmosférico, na solubilização de
+            fosfatos e na supressão de organismos patogênicos.
+          </p>
+          <p>
+            O <strong>EM•1®</strong> (Microrganismos Eficazes) é a tecnologia mais reconhecida nesse campo.
+            Desenvolvido pelo professor Teruo Higa, da Universidade de Ryukyus no Japão, e amplamente
+            pesquisado no Brasil por instituições como Embrapa e universidades federais, o EM•1® reúne mais de
+            80 espécies de microrganismos sinérgicos em uma única formulação líquida.
+          </p>
+
+          <h2 id="beneficios">Benefícios do EM•1® na Agricultura</h2>
+          <p>
+            A aplicação regular do EM•1® promove mudanças perceptíveis na lavoura em poucas semanas. Os
+            principais benefícios documentados por pesquisas de campo e estudos científicos são:
+          </p>
+
+          <ul class="benefit-list">
+            <li>
+              <div class="benefit-number">01</div>
+              <div>
+                <h4>Melhoria da Estrutura e Fertilidade do Solo</h4>
+                <p>Os microrganismos decompõem matéria orgânica e liberam substâncias húmicas que aumentam a
+                capacidade de retenção de água e a agregação das partículas do solo, tornando-o mais poroso e
+                arejado — condições ideais para o desenvolvimento radicular.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-number">02</div>
+              <div>
+                <h4>Aumento da Disponibilidade de Nutrientes</h4>
+                <p>Bactérias do grupo EM•1® solubilizam fosfatos naturalmente presentes no solo e fixam
+                nitrogênio atmosférico, reduzindo a necessidade de adubação química e melhorando a eficiência
+                dos fertilizantes já aplicados.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-number">03</div>
+              <div>
+                <h4>Supressão de Patógenos e Doenças</h4>
+                <p>A colonização do solo por microrganismos benéficos cria competição direta com fungos e
+                bactérias patogênicos. O ambiente microbiano saudável inibe o estabelecimento de agentes
+                causadores de podridões radiculares, tombamento e outras doenças de solo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="benefit-number">04</div>
+              <div>
+                <h4>Estímulo ao Crescimento e à Produtividade</h4>
+                <p>A produção de fitohormônios naturais — como auxinas e citocininas — por parte dos
+                microrganismos do EM•1® estimula o desenvolvimento foliar, o florescimento e o pegamento de
+                frutos, contribuindo para colheitas mais uniformes e com maior peso médio.</p>
+              </div>
+            </li>
+          </ul>
+
+          <h2 id="resultados">Sustentabilidade que Gera Resultados</h2>
+          <p>
+            Uma das maiores barreiras para a adoção do manejo sustentável é a percepção equivocada de que
+            práticas biológicas sacrificam produtividade. Os resultados de campo contradizem esse mito com
+            consistência. Produtores que adotam o EM•1® como parte de um programa integrado relatam:
+          </p>
+          <p>
+            Redução de até <strong>30% no uso de fertilizantes químicos</strong> após dois ciclos de aplicação
+            contínua, sem queda na produtividade. Melhora visível na cor e no vigor das plantas. Menor
+            incidência de doenças de solo, com consequente redução de fungicidas sistêmicos. E, em médio
+            prazo, aumento progressivo da matéria orgânica — o indicador mais confiável de saúde do solo.
+          </p>
+          <p>
+            A sustentabilidade financeira é inseparável da sustentabilidade ambiental. Cada real economizado
+            em insumo químico desnecessário é lucro direto para o produtor. O EM•1® tem custo por hectare
+            competitivo e retorno mensurável — o que o coloca como investimento, não despesa.
+          </p>
+
+          <div class="article-callout">
+            <p>Solo saudável produz planta saudável. Planta saudável precisa de menos defensivo. Menos
+            defensivo significa maior margem. Essa é a lógica simples que move a agricultura sustentável.</p>
+          </div>
+
+          <h2 id="biotech">Biotech Minas: Compromisso com a Agricultura do Futuro</h2>
+          <p>
+            A Biotech Minas nasceu com a missão de levar soluções biológicas de qualidade comprovada ao campo
+            mineiro e brasileiro. Distribuímos o EM•1® para agricultura, pecuária, aquicultura, apicultura,
+            meio ambiente e uso doméstico — porque entendemos que os microrganismos eficazes têm papel
+            transformador em toda a cadeia produtiva.
+          </p>
+          <p>
+            Nossa equipe técnica está disponível para orientar sobre o protocolo de aplicação correto para
+            cada cultura e sistema de produção. Realizamos visitas a campo e oferecemos suporte pós-venda
+            para que os resultados prometidos se concretizem na prática.
+          </p>
+          <p>
+            Se você quer iniciar ou aprofundar o manejo sustentável na sua propriedade, entre em contato.
+            Vamos construir juntos um programa que faça sentido para a sua realidade.
+          </p>
+
+          <div class="article-cta-box">
+            <h3>Fale com a nossa equipe técnica</h3>
+            <p>Tire suas dúvidas sobre o EM•1® e descubra o protocolo ideal para a sua cultura.</p>
+            <div class="article-cta-contacts">
+              <div class="article-cta-contact"><i data-lucide="phone"></i> (31) 9.8830-3747</div>
+              <div class="article-cta-contact"><i data-lucide="phone"></i> (31) 9.9649-7658</div>
+              <div class="article-cta-contact"><i data-lucide="phone"></i> (31) 9.9999-6833</div>
+              <div class="article-cta-contact"><i data-lucide="mail"></i> contato@biotechminas.com.br</div>
+            </div>
+            <a href="fale-conosco.html" class="btn btn-accent">Entrar em contato →</a>
+          </div>
+
+        </div>
+
+        <!-- Share bar -->
+        <div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--gray-100);" data-reveal>
+          <p style="font-size:.82rem;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">Compartilhar</p>
+          <div class="share-bar">
+            <button class="share-btn"><i data-lucide="message-circle"></i> WhatsApp</button>
+            <button class="share-btn"><i data-lucide="facebook"></i> Facebook</button>
+            <button class="share-btn"><i data-lucide="linkedin"></i> LinkedIn</button>
+            <button class="share-btn"><i data-lucide="clipboard"></i> Copiar link</button>
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <div style="margin-top:32px;" data-reveal>
+          <a href="blog.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--green-700);font-weight:600;font-size:.9rem;">← Voltar ao Blog</a>
+        </div>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside data-reveal data-delay="1">
+
+        <!-- Table of contents -->
+        <div class="article-sidebar-section">
+          <h4>Neste artigo</h4>
+          <ul class="toc-list">
+            <li><a href="#manejo">O que é o Manejo Sustentável?</a></li>
+            <li><a href="#microorganismos">Microrganismos Transformadores</a></li>
+            <li><a href="#beneficios">Benefícios do EM•1®</a></li>
+            <li><a href="#resultados">Sustentabilidade e Resultados</a></li>
+            <li><a href="#biotech">Biotech Minas</a></li>
+          </ul>
+        </div>
+
+        <!-- EM1 product highlight -->
+        <div style="background:linear-gradient(135deg,#0d3520,#1a7a45);border-radius:var(--radius-lg);padding:24px;margin-bottom:24px;">
+          <div style="font-size:1.6rem;margin-bottom:10px;">🦠</div>
+          <h4 style="color:#fff;font-size:1rem;margin-bottom:8px;">EM•1® na Biotech Minas</h4>
+          <p style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:16px;">Disponível para agricultura, pecuária, aquicultura e uso ambiental.</p>
+          <a href="produtos.html" class="btn btn-accent btn-sm" style="width:100%;justify-content:center;">Ver produtos →</a>
+        </div>
+
+        <!-- Related posts -->
+        <div class="article-sidebar-section">
+          <h4>Artigos relacionados</h4>
+          <div class="related-post">
+            <div class="related-post-icon">🍄</div>
+            <div>
+              <h5>Trichoderma: o guardião do solo que você precisa conhecer</h5>
+              <a href="#">Ler artigo →</a>
+            </div>
+          </div>
+          <div class="related-post">
+            <div class="related-post-icon">🐛</div>
+            <div>
+              <h5>Beauveria bassiana e o controle de lagartas na soja</h5>
+              <a href="#">Ler artigo →</a>
+            </div>
+          </div>
+          <div class="related-post">
+            <div class="related-post-icon">☕</div>
+            <div>
+              <h5>Café orgânico: como eliminar a broca com biocontrole</h5>
+              <a href="#">Ler artigo →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div style="background:var(--green-800);border-radius:var(--radius-lg);padding:28px;">
+          <div style="margin-bottom:12px;"><i data-lucide="mail-open" style="width:28px;height:28px;color:rgba(255,255,255,.85);stroke-width:1.5;"></i></div>
+          <h4 style="color:var(--white);font-size:1rem;margin-bottom:8px;">Newsletter</h4>
+          <p style="font-size:.84rem;color:rgba(255,255,255,.6);margin-bottom:16px;">Receba novos artigos diretamente no seu e-mail.</p>
+          <input type="email" placeholder="seu@email.com" class="form-control" style="margin-bottom:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff;" />
+          <button class="btn btn-accent btn-sm" style="width:100%;justify-content:center;">Inscrever-se</button>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="../js/icons.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

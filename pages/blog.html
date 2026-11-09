@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Biotech Minas</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/home.css" />
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+    .blog-sidebar-section {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .blog-sidebar-section h4 {
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--dark-900);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--green-100);
+    }
+    .sidebar-tag {
+      display: inline-flex;
+      padding: 6px 14px;
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      color: var(--green-700);
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 600;
+      margin: 4px;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .sidebar-tag:hover {
+      background: var(--green-700);
+      color: var(--white);
+    }
+    .popular-post {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .popular-post:last-child { border-bottom: none; padding-bottom: 0; }
+    .popular-post-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--green-100);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .popular-post h5 { font-size: .83rem; line-height: 1.4; margin-bottom: 3px; }
+    .popular-post time { font-size: .72rem; color: var(--gray-400); }
+  </style>
+</head>
+<body>
+<div id="nav-mount"></div>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="page-hero-breadcrumb">
+      <a href="../index.html">Home</a><span>/</span><span>Blog</span>
+    </div>
+    <h1>Artigos e <span>conhecimento</span></h1>
+    <p>Fique por dentro das últimas pesquisas, novidades e cases de sucesso em agricultura biológica e biocontrole.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Featured Post -->
+    <div class="blog-hero-card mb-32" data-reveal>
+      <div class="blog-hero-img"><div data-icon="field" style="width:220px;height:220px;"></div></div>
+      <div class="blog-hero-body">
+        <span class="badge badge-green">Destaque</span>
+        <h2>Manejo Sustentável na Agricultura: O Poder dos Microrganismos</h2>
+        <p>
+          Descubra como o EM•1® e os microrganismos eficazes transformam o solo, aumentam a disponibilidade
+          de nutrientes e reduzem a dependência de insumos químicos — com resultados comprovados em campo.
+        </p>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:.8rem;color:rgba(255,255,255,.5);">
+            <i data-lucide="user"></i> Biotech Minas
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:.8rem;color:rgba(255,255,255,.5);">
+            <i data-lucide="calendar"></i> Mai 2025
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:.8rem;color:rgba(255,255,255,.5);">
+            <i data-lucide="clock"></i> 6 min leitura
+          </div>
+        </div>
+        <a href="blog-manejo-sustentavel.html" class="btn btn-accent btn-sm">Ler artigo completo →</a>
+      </div>
+    </div>
+
+    <!-- Blog grid + sidebar -->
+    <div class="blog-grid">
+
+      <!-- Articles -->
+      <div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;" data-reveal>
+          <button class="filter-btn active" style="padding:8px 18px;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;border:2px solid var(--green-600);background:var(--green-700);color:#fff;">Todos</button>
+          <button class="filter-btn" style="padding:8px 18px;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;border:2px solid var(--gray-200);background:#fff;color:var(--gray-600);">Biocontrole</button>
+          <button class="filter-btn" style="padding:8px 18px;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;border:2px solid var(--gray-200);background:#fff;color:var(--gray-600);">Pragas</button>
+          <button class="filter-btn" style="padding:8px 18px;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;border:2px solid var(--gray-200);background:#fff;color:var(--gray-600);">Culturas</button>
+          <button class="filter-btn" style="padding:8px 18px;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;border:2px solid var(--gray-200);background:#fff;color:var(--gray-600);">Pesquisa</button>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" data-reveal data-delay="1">
+
+          <div class="blog-card">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#0d3520,#1a7a45);"><div data-icon="bacteria" style="width:140px;height:140px;"></div></div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span class="badge badge-green">Sustentabilidade</span>
+                <time>Mai 2025</time>
+              </div>
+              <h3>Manejo Sustentável na Agricultura: O Poder dos Microrganismos</h3>
+              <p>Como o EM•1® transforma o solo, disponibiliza nutrientes e reduz o uso de químicos.</p>
+              <a href="blog-manejo-sustentavel.html" class="blog-read-more">Ler artigo →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#276741,#72c294);"><div data-icon="fungi" style="width:140px;height:140px;"></div></div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span class="badge badge-green">Biocontrole</span>
+                <time>15 Abr 2025</time>
+              </div>
+              <h3>Como o Trichoderma revoluciona o controle de doenças no solo</h3>
+              <p>Descubra como esse fungo benéfico protege raízes e melhora a absorção de nutrientes.</p>
+              <a href="#" class="blog-read-more">Ler artigo →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#5a7a0a,#9dd622);"><div data-icon="insect" style="width:140px;height:140px;"></div></div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span class="badge badge-lime">Pragas</span>
+                <time>02 Abr 2025</time>
+              </div>
+              <h3>Beauveria bassiana: o fungo que acaba com lagartas na soja</h3>
+              <p>Estudo de caso mostrando redução de 85% na população de Spodoptera com aplicação preventiva.</p>
+              <a href="#" class="blog-read-more">Ler artigo →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#5a3a00,#c8860a);"><div data-icon="coffee" style="width:140px;height:140px;"></div></div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span class="badge badge-dark">Culturas</span>
+                <time>20 Mar 2025</time>
+              </div>
+              <h3>Café orgânico: como eliminar a broca com biocontrole</h3>
+              <p>A Hypothenemus hampei é o principal inimigo do cafezeiro. Veja a solução biológica.</p>
+              <a href="#" class="blog-read-more">Ler artigo →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#163d26,#4a9e6b);"><div data-icon="nematode" style="width:140px;height:140px;"></div></div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span class="badge badge-green">Pesquisa</span>
+                <time>10 Mar 2025</time>
+              </div>
+              <h3>Nematóides de galha: diagnóstico e controle biológico eficaz</h3>
+              <p>Pesquisa da UFLA comprova eficácia de 78% do Purpureocillium lilacinum em tomate.</p>
+              <a href="#" class="blog-read-more">Ler artigo →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#c0392b,#e74c3c);"><div data-icon="plant" style="width:140px;height:140px;"></div></div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span class="badge badge-lime">Culturas</span>
+                <time>25 Fev 2025</time>
+              </div>
+              <h3>Tomate orgânico: manejo biológico do início ao fim</h3>
+              <p>Guia completo para produção de tomate sem agroquímicos em ambiente protegido.</p>
+              <a href="#" class="blog-read-more">Ler artigo →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-img" style="background:linear-gradient(135deg,#2f7d4f,#7cb518);"><div data-icon="bacteria" style="width:140px;height:140px;"></div></div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span class="badge badge-green">Biocontrole</span>
+                <time>12 Fev 2025</time>
+              </div>
+              <h3>Bacillus subtilis: o protetor foliar multifuncional</h3>
+              <p>Como essa bactéria benéfica protege as plantas de dentro para fora e estimula o crescimento.</p>
+              <a href="#" class="blog-read-more">Ler artigo →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div style="display:flex;gap:8px;margin-top:40px;justify-content:center;" data-reveal>
+          <button style="width:40px;height:40px;border-radius:10px;border:2px solid var(--green-700);background:var(--green-700);color:#fff;font-weight:700;cursor:pointer;">1</button>
+          <button style="width:40px;height:40px;border-radius:10px;border:2px solid var(--gray-200);background:#fff;color:var(--gray-600);font-weight:600;cursor:pointer;">2</button>
+          <button style="width:40px;height:40px;border-radius:10px;border:2px solid var(--gray-200);background:#fff;color:var(--gray-600);font-weight:600;cursor:pointer;">3</button>
+          <button style="width:40px;height:40px;border-radius:10px;border:2px solid var(--gray-200);background:#fff;color:var(--gray-600);font-weight:600;cursor:pointer;">→</button>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside data-reveal data-delay="2">
+
+        <!-- Search -->
+        <div class="blog-sidebar-section">
+          <h4>Buscar</h4>
+          <div style="display:flex;gap:8px;">
+            <input type="text" placeholder="Pesquisar artigos..." class="form-control" style="flex:1;" />
+            <button class="btn btn-primary btn-sm" style="padding:12px 16px;"><i data-lucide="search"></i></button>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="blog-sidebar-section">
+          <h4>Categorias</h4>
+          <div>
+            <span class="sidebar-tag">Biocontrole (12)</span>
+            <span class="sidebar-tag">Pragas (8)</span>
+            <span class="sidebar-tag">Culturas (10)</span>
+            <span class="sidebar-tag">Pesquisa (6)</span>
+            <span class="sidebar-tag">MIP (5)</span>
+            <span class="sidebar-tag">Orgânico (7)</span>
+            <span class="sidebar-tag">Inoculantes (4)</span>
+          </div>
+        </div>
+
+        <!-- Popular posts -->
+        <div class="blog-sidebar-section">
+          <h4>Mais lidos</h4>
+          <div class="popular-post">
+            <div class="popular-post-icon">🦠</div>
+            <div>
+              <h5><a href="blog-manejo-sustentavel.html" style="color:var(--dark-700);">Manejo Sustentável e o poder dos Microrganismos</a></h5>
+              <time>Mai 2025</time>
+            </div>
+          </div>
+          <div class="popular-post">
+            <div class="popular-post-icon"><div data-icon="fungi" style="width:28px;height:28px;color:var(--green-600);"></div></div>
+            <div>
+              <h5>Trichoderma: o guardião do solo</h5>
+              <time>28 Abr 2025</time>
+            </div>
+          </div>
+          <div class="popular-post">
+            <div class="popular-post-icon"><div data-icon="insect" style="width:28px;height:28px;color:var(--green-600);"></div></div>
+            <div>
+              <h5>Beauveria e lagarta-do-cartucho</h5>
+              <time>02 Abr 2025</time>
+            </div>
+          </div>
+          <div class="popular-post">
+            <div class="popular-post-icon"><div data-icon="coffee" style="width:28px;height:28px;color:var(--green-600);"></div></div>
+            <div>
+              <h5>Broca-do-café: solução biológica</h5>
+              <time>20 Mar 2025</time>
+            </div>
+          </div>
+          <div class="popular-post">
+            <div class="popular-post-icon"><div data-icon="plant" style="width:28px;height:28px;color:var(--green-600);"></div></div>
+            <div>
+              <h5>Inoculantes para soja: guia completo</h5>
+              <time>01 Mar 2025</time>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div style="background:var(--green-800);border-radius:var(--radius-lg);padding:28px;">
+          <div style="margin-bottom:12px;"><i data-lucide="mail-open" style="width:28px;height:28px;color:rgba(255,255,255,.85);stroke-width:1.5;"></i></div>
+          <h4 style="color:var(--white);font-size:1rem;margin-bottom:8px;">Newsletter</h4>
+          <p style="font-size:.84rem;color:rgba(255,255,255,.6);margin-bottom:16px;">Receba os melhores artigos diretamente no seu e-mail.</p>
+          <input type="email" placeholder="seu@email.com" class="form-control" style="margin-bottom:12px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff;" />
+          <button class="btn btn-accent btn-sm" style="width:100%;justify-content:center;">Inscrever-se</button>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="../js/icons.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
